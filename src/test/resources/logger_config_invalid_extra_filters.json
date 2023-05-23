@@ -1,0 +1,11 @@
+{
+  "columnFiltersConfig": [
+    {
+      "columnName": "customerId",
+      "columnValues": ["123", "456"]
+    }
+  ],
+  "extraQuery": {
+    "log1": ["SELECT * FROM dataset WHERE country IN ['PL', 'US']"]
+  }
+}

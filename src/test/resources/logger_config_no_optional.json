@@ -1,0 +1,8 @@
+{
+  "columnFiltersConfig": [
+    {
+      "columnName": "customerId",
+      "columnValues": ["123", "456"]
+    }
+  ]
+}

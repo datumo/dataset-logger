@@ -1,0 +1,25 @@
+{
+  "columnFiltersConfig": [
+    {
+      "columnName": "customerId",
+      "columnValues": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "columnName": "orderId",
+      "columnValues": ["7", "8"]
+    }
+  ],
+  "extraQuery": {
+    "join1": "SELECT _2.country as order_country, COUNT(*) as order_num FROM dataset GROUP BY _2.country ORDER BY order_num desc"
+  },
+  "columnRenameMapping": {
+    "join1": {
+      "customerId": "_1.customerId",
+      "orderId": "_1.orderId"
+    },
+    "join2": {
+      "customerId": "_1.customerId",
+      "orderId": "_1.orderId"
+    }
+  }
+}
