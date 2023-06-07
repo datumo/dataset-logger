@@ -13,6 +13,13 @@ e.g. all the records with `customerId` in `[10101, 98989]`.
 
 ## Installation
 
+`dataset-logger` package is published to [Maven Central](https://mvnrepository.com/artifact/io.datumo/dataset-logger) and cross-built for Scala
+versions 2.12 and 2.13. To add the package to your project include it in dependencies, e.g. add:
+```scala
+libraryDependencies += "io.datumo" %% "dataset-logger" % "0.1.0"
+```
+to build.sbt if your project is managed with SBT. An example of full build.sbt can be found [here](examples/customer-report/build.sbt)
+
 ## Usage
 
 Extend your class with `DatasetLogger`, or initialize an instance of it, to use its features. `DatasetLogger` takes single parameter - either `String` or 
