@@ -10,10 +10,16 @@ ThisBuild / scmInfo := Some(
 )
 ThisBuild / developers := List(
   Developer(
+    id = "michalmisiewicz",
+    name = "Michał Misiewicz",
+    email = "michal.misiewicz@datumo.pl",
+    url = url("https://github.com/michalmisiewicz")
+  ),
+  Developer(
     id = "wiatrak2",
     name = "Wojciech Pratkowiecki",
     email = "wojciech.pratkowiecki@datumo.pl",
-    url = url("https://datumo.io")
+    url = url("https://github.com/wiatrak2")
   )
 )
 
