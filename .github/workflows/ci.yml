@@ -1,0 +1,32 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: ["**"]
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        jdk: [ adopt@1.8 ]
+        scala: [ "2.12.15", "2.13.10" ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Scala
+        uses: olafurpg/setup-scala@v13
+        with:
+          java-version: ${{ matrix.jdk }}
+
+      - name: Compile
+        run: sbt "++${{ matrix.scala }} compile"
+
+      - name: Run tests
+        run: sbt coverage "++${{ matrix.scala }} test"
