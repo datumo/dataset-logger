@@ -1,5 +1,8 @@
 # Dataset Logger
 
+[![Build status](https://img.shields.io/github/actions/workflow/status/datumo/dataset-logger/ci.yml)](https://github.com/datumo/dataset-logger/actions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.datumo/dataset-logger_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.datumo/dataset-logger_2.13)
+
 `DatasetLogger` allows to investigate Spark Dataset (and DataFrame) content during job execution without messing the code
 or performance. With configuration provided on launch you can track specific records and investigate tables at
 different stages of your application.
