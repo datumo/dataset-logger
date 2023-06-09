@@ -28,7 +28,7 @@ jobs:
           cache: sbt
 
       - name: Compile
-        run: sbt "++${{ matrix.scala }} compile"
+        run: sbt "++${{ matrix.scala }}" compile
 
       - name: Run tests
-        run: sbt "++${{ matrix.scala }} coverage test"
+        run: sbt "++${{ matrix.scala }}" coverage test
