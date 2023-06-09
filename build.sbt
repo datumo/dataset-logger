@@ -1,5 +1,5 @@
 name := "dataset-logger"
-version := "0.0.3-dev"
+version := "0.1.0"
 
 val Scala213 = "2.13.10"
 val Scala212 = "2.12.15"
