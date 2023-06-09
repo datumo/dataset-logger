@@ -30,5 +30,8 @@ jobs:
       - name: Compile
         run: sbt "++${{ matrix.scala }}" compile
 
-      - name: Run tests
+      - name: Scalafmt check
+        run: sbt "++${{ matrix.scala }}" +scalafmtCheck scalafmtSbtCheck
+
+      - name: Run tests with coverage
         run: sbt "++${{ matrix.scala }}" coverage test
