@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
+        java: [8, 11, 17]
         scala: [ "2.12.15", "2.13.10" ]
     steps:
       - name: Checkout repository
@@ -20,7 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 8
+          java-version: ${{ matrix.java }}
           cache: sbt
       - name: Compile
         run: sbt "++${{ matrix.scala }}" compile
