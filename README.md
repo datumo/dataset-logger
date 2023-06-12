@@ -1,5 +1,8 @@
 # Dataset Logger
 
+[![Build status](https://img.shields.io/github/actions/workflow/status/datumo/dataset-logger/ci.yml)](https://github.com/datumo/dataset-logger/actions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.datumo/dataset-logger_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.datumo/dataset-logger_2.13)
+
 `DatasetLogger` allows to investigate Spark Dataset (and DataFrame) content during job execution without messing the code
 or performance. With configuration provided on launch you can track specific records and investigate tables at
 different stages of your application.
@@ -12,6 +15,13 @@ All you need to do is to launch your job with configuration specifying what valu
 e.g. all the records with `customerId` in `[10101, 98989]`. 
 
 ## Installation
+
+`dataset-logger` package is published to [Maven Central](https://mvnrepository.com/artifact/io.datumo/dataset-logger) and cross-built for Scala
+versions 2.12 and 2.13. To add the package to your project include it in dependencies, e.g. add:
+```scala
+libraryDependencies += "io.datumo" %% "dataset-logger" % "0.1.0"
+```
+to build.sbt if your project is managed with SBT. An example of full build.sbt can be found [here](examples/customer-report/build.sbt)
 
 ## Usage
 

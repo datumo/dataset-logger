@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: ["**"]
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        java: [8, 11]
+        scala: [ "2.12.15", "2.13.10" ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: sbt
+      - name: Compile
+        run: sbt "++${{ matrix.scala }}" compile
+      - name: Scalafmt check
+        run: sbt "++${{ matrix.scala }}" +scalafmtCheck scalafmtSbtCheck
+      - name: Run tests with coverage
+        run: sbt "++${{ matrix.scala }}" coverage test
